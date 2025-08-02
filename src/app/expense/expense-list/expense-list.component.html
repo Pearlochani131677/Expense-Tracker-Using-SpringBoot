@@ -1,0 +1,16 @@
+<form action="" [formGroup]="categoryForm">
+<select formControlName="categoryId">
+    <option value="" selected>Filter by Category</option>
+    <option [value]="c.id"
+        *ngFor="let c of categories">{{c.name}}</option>
+</select>
+</form>
+<hr>
+<table>
+    <tr *ngFor="let expense of filteredExpenses">
+        <td>{{expense.id}}</td>
+        <td>{{expense.name}}</td>
+        <td>{{expense.amount}}</td>
+        <td>{{expense.createdAt}}</td>
+    </tr>
+</table>

@@ -1,0 +1,28 @@
+<form [formGroup]="expenseForm" (ngSubmit)="addExpenses()">
+  <div>
+    <label for="name">Name</label>
+    <input type="text" formControlName="name" id="name" />
+  </div>
+  <hr />
+  <div>
+    <label for="amount">Amount</label>
+    <input type="number" formControlName="amount" id="amount" />
+  </div>
+  <hr />
+  <div>
+    <label for="category">Category</label>
+    <select formControlName="categoryId" id="category">
+      <option *ngFor="let c of categories" [value]="c.id">{{ c.name }}</option>
+    </select>
+  </div>
+  <hr />
+  <button type="submit">Submit</button>
+</form>
+ <hr>
+
+
+
+<label for="file_upload">Upload your file  </label>
+<input type="file" accept=".csv" (change)="selectFile($event)">
+<button (click)="uploadSelectedFile()">Upload CSV</button>
+  
